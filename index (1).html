@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alex & Samira — Our Love Story</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Satisfy&family=DM+Sans:wght@200;300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div id="cursor"></div>
+  <div id="cursor-trail"></div>
+
+  <!-- Particle canvas -->
+  <canvas id="heartCanvas"></canvas>
+
+  <!-- ══ HERO ══ -->
+  <section id="hero">
+    <div class="hero-bg-wrap">
+      <div class="hero-gradient"></div>
+      <div class="hero-noise"></div>
+    </div>
+
+    <div class="hero-center">
+      <div class="hero-tagline" id="heroTagline">a love that grows every day</div>
+
+      <div class="hero-names-wrap">
+        <span class="hero-name left" id="nameAlex">Alex</span>
+        <div class="hero-heart-center">
+          <svg class="beating-heart" viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 85 C50 85 5 55 5 28 C5 12 17 2 30 2 C38 2 45 7 50 14 C55 7 62 2 70 2 C83 2 95 12 95 28 C95 55 50 85 50 85Z"/>
+          </svg>
+          <span class="hero-since">since 2021</span>
+        </div>
+        <span class="hero-name right" id="nameSamira">Samira</span>
+      </div>
+
+      <p class="hero-quote" id="heroQuote">"In all the world, there is no heart for me like yours."</p>
+
+      <div class="hero-scroll-cta" id="heroScroll">
+        <span>Explore our story</span>
+        <div class="scroll-dots">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating emojis -->
+    <div class="float-emojis" id="floatEmojis"></div>
+  </section>
+
+  <!-- ══ LOVE COUNTER ══ -->
+  <section id="counter-section">
+    <div class="counter-inner">
+      <p class="section-eyebrow">Together for</p>
+      <div class="counters-grid">
+        <div class="counter-box" data-target="years">
+          <span class="counter-val" id="cYears">0</span>
+          <span class="counter-lbl">Years</span>
+        </div>
+        <div class="counter-box" data-target="months">
+          <span class="counter-val" id="cMonths">0</span>
+          <span class="counter-lbl">Months</span>
+        </div>
+        <div class="counter-box" data-target="days">
+          <span class="counter-val" id="cDays">0</span>
+          <span class="counter-lbl">Days</span>
+        </div>
+        <div class="counter-box" data-target="hours">
+          <span class="counter-val" id="cHours">0</span>
+          <span class="counter-lbl">Hours</span>
+        </div>
+        <div class="counter-box pulse-box">
+          <span class="counter-val" id="cHeartbeats">♡</span>
+          <span class="counter-lbl">Heartbeats</span>
+        </div>
+      </div>
+      <p class="counter-sub">…and every second feels like the first</p>
+    </div>
+  </section>
+
+  <!-- ══ MEMORY TIMELINE ══ -->
+  <section id="timeline">
+    <div class="tl-header reveal">
+      <p class="section-eyebrow pink">Our Chapters</p>
+      <h2 class="section-title">Moments That Made Us</h2>
+    </div>
+
+    <div class="tl-track">
+
+      <div class="tl-item reveal" data-side="left">
+        <div class="tl-card">
+          <div class="tl-card-img">
+            <img src="https://images.unsplash.com/photo-1529154036614-a60975f5c760?w=500&q=80" alt="First meeting"/>
+            <div class="tl-card-img-overlay"></div>
+          </div>
+          <div class="tl-card-body">
+            <span class="tl-date">March 2021</span>
+            <h3 class="tl-title">The Beginning</h3>
+            <p class="tl-desc">A rainy Tuesday, a borrowed umbrella, and two strangers who suddenly weren't strangers anymore. The universe had been planning this for a while.</p>
+            <span class="tl-emoji">☔</span>
+          </div>
+        </div>
+        <div class="tl-node"><div class="tl-node-inner"></div></div>
+      </div>
+
+      <div class="tl-item reveal" data-side="right">
+        <div class="tl-card">
+          <div class="tl-card-img">
+            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=500&q=80" alt="First trip"/>
+            <div class="tl-card-img-overlay"></div>
+          </div>
+          <div class="tl-card-body">
+            <span class="tl-date">July 2021</span>
+            <h3 class="tl-title">First Adventure</h3>
+            <p class="tl-desc">We packed one bag, bought two tickets, and discovered that the best travel companion is someone who makes every place feel like home.</p>
+            <span class="tl-emoji">✈️</span>
+          </div>
+        </div>
+        <div class="tl-node"><div class="tl-node-inner"></div></div>
+      </div>
+
+      <div class="tl-item reveal" data-side="left">
+        <div class="tl-card">
+          <div class="tl-card-img">
+            <img src="https://images.unsplash.com/photo-1550963295-019d8a8a61c5?w=500&q=80" alt="Cooking together"/>
+            <div class="tl-card-img-overlay"></div>
+          </div>
+          <div class="tl-card-body">
+            <span class="tl-date">Winter 2022</span>
+            <h3 class="tl-title">Sunday Mornings</h3>
+            <p class="tl-desc">Lazy breakfasts, burned pancakes, and the realization that ordinary moments with you feel extraordinary. Coffee tastes better when you're across the table.</p>
+            <span class="tl-emoji">☕</span>
+          </div>
+        </div>
+        <div class="tl-node"><div class="tl-node-inner"></div></div>
+      </div>
+
+      <div class="tl-item reveal" data-side="right">
+        <div class="tl-card">
+          <div class="tl-card-img">
+            <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=500&q=80" alt="Sunset"/>
+            <div class="tl-card-img-overlay"></div>
+          </div>
+          <div class="tl-card-body">
+            <span class="tl-date">Summer 2023</span>
+            <h3 class="tl-title">The Golden Hour</h3>
+            <p class="tl-desc">That sunset in August when we sat in silence and didn't need words. We both knew — this is it. This is the person. This is forever.</p>
+            <span class="tl-emoji">🌅</span>
+          </div>
+        </div>
+        <div class="tl-node"><div class="tl-node-inner"></div></div>
+      </div>
+
+      <div class="tl-item reveal" data-side="left">
+        <div class="tl-card tl-card--special">
+          <div class="tl-card-img">
+            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=500&q=80" alt="Engagement"/>
+            <div class="tl-card-img-overlay"></div>
+          </div>
+          <div class="tl-card-body">
+            <span class="tl-date">February 2024</span>
+            <h3 class="tl-title">She Said Yes 💍</h3>
+            <p class="tl-desc">Down on one knee, heart pounding, hands trembling — and you said yes before he could finish the question. The happiest moment of our lives.</p>
+            <span class="tl-emoji">💍</span>
+          </div>
+        </div>
+        <div class="tl-node tl-node--special"><div class="tl-node-inner"></div></div>
+      </div>
+
+      <div class="tl-item reveal" data-side="right">
+        <div class="tl-card">
+          <div class="tl-card-img">
+            <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=500&q=80" alt="Now"/>
+            <div class="tl-card-img-overlay"></div>
+          </div>
+          <div class="tl-card-body">
+            <span class="tl-date">2025 — Now</span>
+            <h3 class="tl-title">Building Our World</h3>
+            <p class="tl-desc">Planning, dreaming, laughing at all the small things. Every day we build something more beautiful than the day before. The best is yet to come.</p>
+            <span class="tl-emoji">🏡</span>
+          </div>
+        </div>
+        <div class="tl-node"><div class="tl-node-inner"></div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ REASONS WE LOVE ══ -->
+  <section id="reasons">
+    <div class="reasons-bg"></div>
+    <div class="reasons-inner">
+      <p class="section-eyebrow reveal">Why we love each other</p>
+      <h2 class="section-title light reveal">Infinite Reasons</h2>
+
+      <div class="reasons-grid">
+
+        <div class="reason-card reveal" data-delay="0">
+          <div class="reason-icon">😂</div>
+          <h3>You Make Me Laugh</h3>
+          <p>The kind of laugh that hurts your stomach and makes your eyes water. Every. Single. Day.</p>
+        </div>
+
+        <div class="reason-card reveal" data-delay="1">
+          <div class="reason-icon">🧠</div>
+          <h3>Your Beautiful Mind</h3>
+          <p>The way you see the world — curious, kind, brilliant. I could listen to you talk forever.</p>
+        </div>
+
+        <div class="reason-card reveal" data-delay="2">
+          <div class="reason-icon">🤝</div>
+          <h3>My Safe Place</h3>
+          <p>With you, I'm fully myself. No masks, no filters. Just us — completely real and completely free.</p>
+        </div>
+
+        <div class="reason-card reveal" data-delay="3">
+          <div class="reason-icon">🌱</div>
+          <h3>We Grow Together</h3>
+          <p>You make me want to be better. And somehow, we always end up growing in the same direction.</p>
+        </div>
+
+        <div class="reason-card reveal" data-delay="4">
+          <div class="reason-icon">✨</div>
+          <h3>The Little Things</h3>
+          <p>The way you hum while cooking. How you steal all the blankets. The texts at 2am. All of it.</p>
+        </div>
+
+        <div class="reason-card reveal" data-delay="5">
+          <div class="reason-icon">💫</div>
+          <h3>Choosing Each Other</h3>
+          <p>Every morning is a choice. And every morning, without a second thought — I choose you.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PHOTO WALL ══ -->
+  <section id="photowall">
+    <div class="pw-header reveal">
+      <p class="section-eyebrow">Frozen in time</p>
+      <h2 class="section-title">Our Gallery</h2>
+      <p class="pw-sub reveal">Click any photo to feel the moment again</p>
+    </div>
+
+    <div class="pw-grid" id="pwGrid">
+      <div class="pw-item pw-big reveal" data-src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=90" data-caption="The beginning of forever 💛">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=700&q=80" alt=""/>
+        <div class="pw-overlay"><span>💛</span></div>
+      </div>
+      <div class="pw-item reveal" data-src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=900&q=90" data-caption="Just us 🌸">
+        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=500&q=80" alt=""/>
+        <div class="pw-overlay"><span>🌸</span></div>
+      </div>
+      <div class="pw-item reveal" data-src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?w=900&q=90" data-caption="Our first trip ✈️">
+        <img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?w=500&q=80" alt=""/>
+        <div class="pw-overlay"><span>✈️</span></div>
+      </div>
+      <div class="pw-item pw-tall reveal" data-src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=900&q=90" data-caption="Golden days ☀️">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=500&q=80" alt=""/>
+        <div class="pw-overlay"><span>☀️</span></div>
+      </div>
+      <div class="pw-item reveal" data-src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=1200&q=90" data-caption="Engagement magic ✨">
+        <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=700&q=80" alt=""/>
+        <div class="pw-overlay"><span>✨</span></div>
+      </div>
+      <div class="pw-item reveal" data-src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=900&q=90" data-caption="In bloom 🌺">
+        <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=500&q=80" alt=""/>
+        <div class="pw-overlay"><span>🌺</span></div>
+      </div>
+      <div class="pw-item pw-wide reveal" data-src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=1400&q=90" data-caption="Sunsets & forever 🌅">
+        <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=900&q=80" alt=""/>
+        <div class="pw-overlay"><span>🌅</span></div>
+      </div>
+      <div class="pw-item reveal" data-src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=900&q=90" data-caption="Our favorite people 💕">
+        <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=500&q=80" alt=""/>
+        <div class="pw-overlay"><span>💕</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ LOVE LETTER ══ -->
+  <section id="letter">
+    <div class="letter-wrap reveal">
+      <div class="letter-paper">
+        <div class="letter-header">
+          <span class="letter-to">To my person,</span>
+          <div class="letter-decoration">✦ ✦ ✦</div>
+        </div>
+        <div class="letter-body" id="letterBody">
+          <!-- typed letter here -->
+        </div>
+        <div class="letter-footer">
+          <span class="letter-sign">Yours, always —</span>
+          <span class="letter-name-sign">Alex &amp; Samira</span>
+          <div class="letter-wax-seal">❤</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ INTERACTIVE LOVE NOTES ══ -->
+  <section id="notes">
+    <p class="section-eyebrow reveal pink">Little reminders</p>
+    <h2 class="section-title reveal">Love Notes</h2>
+    <p class="notes-sub reveal">Shake a note to reveal a secret message 💌</p>
+
+    <div class="notes-grid" id="notesGrid">
+      <div class="note-envelope" data-msg="You are my favourite notification.">
+        <div class="note-front">💌</div>
+        <div class="note-back"><p></p></div>
+      </div>
+      <div class="note-envelope" data-msg="I love you more than coffee — and that's saying a lot.">
+        <div class="note-front">☕</div>
+        <div class="note-back"><p></p></div>
+      </div>
+      <div class="note-envelope" data-msg="Every time I look at you, I fall in love all over again.">
+        <div class="note-front">👀</div>
+        <div class="note-back"><p></p></div>
+      </div>
+      <div class="note-envelope" data-msg="You make the ordinary feel magical. Always.">
+        <div class="note-front">✨</div>
+        <div class="note-back"><p></p></div>
+      </div>
+      <div class="note-envelope" data-msg="Home is not a place. Home is you.">
+        <div class="note-front">🏠</div>
+        <div class="note-back"><p></p></div>
+      </div>
+      <div class="note-envelope" data-msg="I would choose you in every universe, in every lifetime.">
+        <div class="note-front">🌌</div>
+        <div class="note-back"><p></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MUSIC PLAYER ══ -->
+  <section id="music-section">
+    <div class="music-card reveal">
+      <div class="music-vinyl" id="musicVinyl">
+        <div class="vinyl-center">♪</div>
+      </div>
+      <div class="music-info">
+        <p class="music-label">Our Song</p>
+        <h3 class="music-title">Perfect — Ed Sheeran</h3>
+        <p class="music-sub">"I found a love for me…"</p>
+        <div class="music-controls">
+          <button class="music-btn" id="musicPlayBtn" onclick="toggleMusic()">
+            <span id="musicIcon">▶</span>
+          </button>
+          <div class="music-progress">
+            <div class="music-bar" id="musicBar"></div>
+          </div>
+        </div>
+        <p class="music-note">🎵 Add your song by linking an audio file in script.js</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WISH / MESSAGE BOARD ══ -->
+  <section id="wishboard">
+    <div class="wb-header reveal">
+      <p class="section-eyebrow pink">From the heart</p>
+      <h2 class="section-title">Send Them Love</h2>
+    </div>
+    <div class="wb-form-wrap reveal">
+      <div class="wb-form">
+        <input type="text" id="wbName" placeholder="Your name 💛" maxlength="30"/>
+        <textarea id="wbMsg" placeholder="Write something beautiful… 🌸" rows="3" maxlength="150"></textarea>
+        <button class="wb-submit" onclick="submitWish()">Send with Love 💌</button>
+      </div>
+    </div>
+    <div class="wb-wall" id="wbWall"></div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer id="footer">
+    <canvas id="footerCanvas"></canvas>
+    <div class="footer-inner">
+      <div class="footer-heart-big" id="footerHeart">
+        <svg viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 85 C50 85 5 55 5 28 C5 12 17 2 30 2 C38 2 45 7 50 14 C55 7 62 2 70 2 C83 2 95 12 95 28 C95 55 50 85 50 85Z"/>
+        </svg>
+      </div>
+      <span class="footer-names">Alex &amp; Samira</span>
+      <p class="footer-tagline">Two hearts. One story. Infinite love.</p>
+      <p class="footer-since">♡ Since March 2021 ♡</p>
+      <p class="footer-credit">Crafted with love by Peter</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lb" class="lb">
+    <button class="lb-close" id="lbClose">✕</button>
+    <button class="lb-nav lb-prev" id="lbPrev">‹</button>
+    <button class="lb-nav lb-next" id="lbNext">›</button>
+    <div class="lb-inner">
+      <img id="lbImg" src="" alt=""/>
+      <div class="lb-cap" id="lbCap"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
